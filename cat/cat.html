@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+    <title>Tom Shop</title>
+    <script src='https://cdn.bootcss.com/Swiper/3.4.2/js/swiper.min.js'></script>
+    <link rel="stylesheet" href="https://cdn.bootcss.com/Swiper/3.4.2/css/swiper.min.css" />
+    <style>
+        body,ul,dl,dd,dt,p{
+            padding:0;
+            margin:0;
+        }
+        body,html{
+            background-color: #f3f3f3;
+            width: 100%;
+            min-height: 100%;
+        }
+        .swiper-container{
+            height:3.79rem;
+        }
+        li{
+            list-style: none;
+            float: left;
+            margin-top: .3rem;
+            width:5.3rem;
+            background: #fff;
+        }
+        li dt:nth-child(1) {
+            display: block;
+            width:5.3rem;
+            height:5.2rem;
+        }
+        dt img{
+            width:100%;
+        }
+        dd{
+            height:1rem;
+            margin:.1rem 0;
+            overflow:hidden;
+            text-overflow:ellipsis;
+            display:-webkit-box;
+            -webkit-box-orient:vertical;
+            -webkit-line-clamp:2;
+            word-break:break-all;
+            padding:0 8px;
+        }
+        .price{
+            color:#dd301f;
+            font-size: .6053rem;
+            text-align: center;
+            margin-bottom: .1rem;
+        }
+        li:nth-child(even){
+            float:right;
+        }
+        .swiper-slide img{
+            width:100%;
+            height:100%;
+        }
+        a{
+            text-decoration: none;
+            color:#3b3b3b;
+        }
+    </style>
+    <script>
+        (function(doc, win) {
+            var docEl = doc.documentElement,
+                resizeEvt = 'orientationchange' in window ? 'orientationchange' : 'resize',
+                recalc = function() {
+                    var clientWidth = docEl.clientWidth;
+                    if (!clientWidth) return;
+                    if (clientWidth >= 1080) {
+                        docEl.style.fontSize = '100px';
+                    } else {
+                        docEl.style.fontSize = 100 * (clientWidth / 1080) + 'px';
+                    }
+                };
+
+            if (!doc.addEventListener) return;
+            //浏览器宽度高度变化的时候
+            win.addEventListener(resizeEvt, recalc, false);
+            //浏览器开始渲染的时候
+            doc.addEventListener('DOMContentLoaded', recalc, false);
+        })(document, window);
+    </script>
+</head>
+<body>
+<header>
+    <div class="swiper-container">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide" onclick="Click('client/clickData',banner,1)"><a href="#"><img src="44.jpg" alt=""></a></div>
+            <div class="swiper-slide" onclick="Click('client/clickData',banner,2)"><img src="#" alt=""></div>
+            <div class="swiper-slide" onclick="Click('client/clickData',banner,3)"><img src="#" alt=""></div>
+        </div>
+    </div>
+</header>
+<content>
+    <ul id="SB">
+       <li onclick="Click('client/clickData',product,1)">
+           <a href="">
+           <dl>
+               <dt><img src='11.jpg' data-imgurl="11.jpg"></dt>
+               <dd class="dd">以视觉方式显示信息的装置以视觉方式显示信息的装置以视觉方式显示信息的装置</dd>
+               <dt class="price">￥12151</dt>
+           </dl>
+           </a>
+       </li>
+        <li onclick="Click('client/clickData',product,2)">
+            <dl>
+                <dt><img src='22.jpg' data-imgurl="22.jpg"></dt>
+                <dd class="dd">以视觉方式显示信息的装置</dd>
+                <dt class="price">$12151</dt>
+            </dl>
+        </li>
+        <li onclick="Click('client/clickData',product,3)">
+            <dl>
+                <dt><img src='' data-imgurl="33.jpg"></dt>
+                <dd class="dd">以视觉方式显示信息的装置的装置的装置</dd>
+                <dt class="price">$12151</dt>
+            </dl>
+        </li>
+        <li onclick="Click('client/clickData',product,4)">
+            <dl>
+                <dt><img src='' data-imgurl="55.jpg"></dt>
+                <dd class="dd">Bluedio Air Model Bluetooth Headphones/Headset Fashionable Wireless Headphones</dd>
+                <dt class="price">$12151</dt>
+            </dl>
+        </li>
+        <li onclick="Click('client/clickData',product,5)">
+            <dl>
+                <dt><img src='' data-imgurl="66.jpg"></dt>
+                <dd class="dd">Bluedio Air Model</dd>
+                <dt class="price">$12151</dt>
+            </dl>
+        </li>
+        <li onclick="Click('client/clickData',product,5)">
+            <dl>
+                <dt><img src='' data-imgurl="77.jpg"></dt>
+                <dd class="dd">Bluedio Air Model</dd>
+                <dt class="price">$12151</dt>
+            </dl>
+        </li>
+        <li onclick="Click('client/clickData',product,5)">
+            <dl>
+                <dt><img src='' data-imgurl="88.jpg"></dt>
+                <dd class="dd">Bluedio Air Model</dd>
+                <dt class="price">$12151</dt>
+            </dl>
+        </li>
+        <li onclick="Click('client/clickData',product,5)">
+            <dl>
+                <dt><img src='' data-imgurl="99.jpg"></dt>
+                <dd class="dd">Bluedio Air Model</dd>
+                <dt class="price">$12151</dt>
+            </dl>
+        </li>
+        <li onclick="Click('client/clickData',product,5)">
+            <dl>
+                <dt><img src='' data-imgurl="1010.jpg"></dt>
+                <dd class="dd">Bluedio Air Model</dd>
+                <dt class="price">$12151</dt>
+            </dl>
+        </li>
+        <li onclick="Click('client/clickData',product,5)">
+            <dl>
+                <dt><img src='' data-imgurl="1111.jpg"></dt>
+                <dd class="dd">Bluedio Air Model</dd>
+                <dt class="price">$12151</dt>
+            </dl>
+        </li>
+        <li onclick="Click('client/clickData',product,5)">
+            <dl>
+                <dt><img src='' data-imgurl="1212.jpg"></dt>
+                <dd class="dd">Bluedio Air Model</dd>
+                <dt class="price">$12151</dt>
+            </dl>
+        </li>
+        <li onclick="Click('client/clickData',product,5)">
+            <dl>
+                <dt><img src='' data-imgurl="1313.jpg"></dt>
+                <dd class="dd">Bluedio Air Model</dd>
+                <dt class="price">$12151</dt>
+            </dl>
+        </li>
+        <li onclick="Click('client/clickData',product,5)">
+            <dl>
+                <dt><img src='' data-imgurl="1414.jpg"></dt>
+                <dd class="dd">Bluedio Air Model</dd>
+                <dt class="price">$12151</dt>
+            </dl>
+        </li>
+        <li onclick="Click('client/clickData',product,5)">
+            <dl>
+                <dt><img src='' data-imgurl="1515.jpg"></dt>
+                <dd class="dd">Bluedio Air Model</dd>
+                <dt class="price">$12151</dt>
+            </dl>
+        </li>
+        <li onclick="Click('client/clickData',product,5)">
+            <dl>
+                <dt><img src='' data-imgurl="1616.jpg"></dt>
+                <dd class="dd">Bluedio Air Model</dd>
+                <dt class="price">$12151</dt>
+            </dl>
+        </li>
+        <li onclick="Click('client/clickData',product,5)">
+            <dl>
+                <dt><img src='' data-imgurl="1717.jpg"></dt>
+                <dd class="dd">Bluedio Air Model</dd>
+                <dt class="price">$12151</dt>
+            </dl>
+        </li>
+        <li onclick="Click('client/clickData',product,5)">
+            <dl>
+                <dt><img src='' data-imgurl="1818.jpg"></dt>
+                <dd class="dd">Bluedio Air Model</dd>
+                <dt class="price">$12151</dt>
+            </dl>
+        </li>
+    </ul>
+</content>
+<script type="text/javascript">
+    var aImages = document.getElementById("SB").getElementsByTagName('img'); //获取id为SB的文档内所有的图片
+    var arr=[];
+    for(var i=0;i<aImages.length;i++){
+        arr.push(aImages[i]);
+    }
+    var init=arr.slice(1,5);
+    loadImg(init);
+    window.onscroll = function() { //滚动条滚动触发
+        loadImg(aImages);
+    };
+
+    //getBoundingClientRect 是图片懒加载的核心
+    function loadImg(arr) {
+        for(let i = 0, len = arr.length; i < len; i++) {
+            if(arr[i].getBoundingClientRect().top < document.documentElement.clientHeight && !arr[i].isLoad) {
+                arr[i].isLoad = true; //图片显示标志位
+                //arr[i].style.cssText = "opacity: 0;";
+                (function(i) {
+                    setTimeout(function() {
+                        if(arr[i].dataset) { //兼容不支持data的浏览器
+                            aftLoadImg(arr[i], arr[i].dataset.imgurl);
+                        } else {
+                            aftLoadImg(arr[i], arr[i].getAttribute("data-imgurl"));
+                        }
+                        arr[i].style.cssText = "transition: 1s; opacity: 1;" //相当于fadein
+                    }, 500)
+                })(i);
+            }
+        }
+    }
+
+    function aftLoadImg(obj, url) {
+        var oImg = new Image();
+        oImg.onload = function() {
+            obj.src = oImg.src; //下载完成后将该图片赋给目标obj目标对象
+        }
+        oImg.src = url; //oImg对象先下载该图像
+    }
+   var mySwiper = new Swiper('.swiper-container', {
+        autoplay: 2000,
+        loop : true,
+    })
+    function GetLength(str) {
+        ///<summary>获得字符串实际长度，中文2，英文1</summary>
+        ///<param name="str">要获得长度的字符串</param>
+        var realLength = 0, len = str.length, charCode = -1;
+        for (var i = 0; i < len; i++) {
+            charCode = str.charCodeAt(i);
+            if (charCode >= 0 && charCode <= 128)
+                realLength += 1;
+            else
+                realLength += 2;
+        }
+        return realLength;
+    };
+    var dd=document.getElementsByClassName('dd')
+    for(var i=0;i<dd.length;i++){
+        if(GetLength(dd[i].innerHTML)<26){
+            dd[i].style.textAlign='center';
+            dd[i].style.lineHeight='1.13rem'
+        }
+    }
+    function Click(url,type,id){
+        fetch(url,{
+            method:'POST',
+            headers: {
+                "Content-Type": "application/x-www-form-urlencoded"
+            },
+            body:'click='+type+'&id='+id,
+        })
+    }
+</script>
+</body>
+</html>
