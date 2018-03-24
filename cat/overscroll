@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .img-area{width: 500px;height: 500px; margin: 0 auto;}
+        .my-photo{width:500px; height: 300px}
+        .scrollerFooter, .scrollerFooter1 {
+            height: 200px;
+        }
+    </style>
+</head>
+<body>
+<div id="container">
+    <div class="img-area"><img class="my-photo" alt="loading" src="./img/1.jpg" /></div>
+    <div class="img-area"><img class="my-photo" alt="loading" src="./img/2.jpg" /></div>
+    <div class="img-area"><img class="my-photo" alt="loading" src="./img/3.jpg" /></div>
+    <div class="img-area"><img class="my-photo" alt="loading" src="./img/4.jpg" /></div>
+</div>
+<div class="scrollerFooter1"></div>
+<script>
+    //  IntersectionObserver 传入 callback
+    var observer = new IntersectionObserver(function(changes) {
+        if (changes[0].intersectionRatio <= 0) return;
+        loadItems(3);
+        console.log('Loaded new items');
+    })
+
+    observer.observe(
+        document.querySelector('.scrollerFooter1')
+    );
+
+    function loadItems(number) {
+        for (var i = 0; i< number; i++) {
+            document.getElementById('container').appendChild(document.getElementById('container').firstChild)
+        }
+    }
+</script>
+</body>
+</html>
