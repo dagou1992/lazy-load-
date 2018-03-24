@@ -22,33 +22,25 @@
     <div class="img-area"><img class="my-photo" alt="loading" data-src="./img/5.jpg" /></div>
 </div>
 <script>
-    //  IntersectionObserver 传入 callback
-    var io = new IntersectionObserver(function (ioes) {
-        ioes.forEach(function (ioe) {
-            var el = ioe.target
-            var intersectionRatio = ioe.intersectionRatio
-            console.log(intersectionRatio)
-            if (intersectionRatio > 0 && intersectionRatio <= 1) {
-                loadImg(el)
-            }
-            el.onload = el.onerror = function() {
-                io.unobserve(el);
-            }
-        })
-    })
-
-    function checkImg() {
-        var imgs = Array.from(document.querySelectorAll('.my-photo'))
-        imgs.forEach(function(item) {io.observe(item)})
+    function lazyLoad(imgClassName) {
+        const imgList = Array.from(document.querySelectorAll(imgClassName));
+        var io = new IntersectionObserver(function (ioes) {
+            ioes.forEach(function (ioe) {
+                var el = ioe.target;
+                var intersectionRatio = ioe.intersectionRatio;
+                if (intersectionRatio > 0 && intersectionRatio <= 1) {
+                    if (!el.src) {
+                        el.src = el.dataset.src
+                    }
+                }
+            })
+        });
+        imgList.forEach(function(item) {
+            io.observe(item)
+        });
     }
 
-    function loadImg(el) {
-        if (!el.src) {
-            el.src = el.dataset.src
-        }
-    }
-
-    checkImg()
+    lazyLoad('.my-photo');
 </script>
 </body>
 </html>
