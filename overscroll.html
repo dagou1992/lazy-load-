@@ -20,22 +20,24 @@
 </div>
 <div class="scrollerFooter1"></div>
 <script>
-    //  IntersectionObserver 传入 callback
-    var observer = new IntersectionObserver(function(changes) {
-        if (changes[0].intersectionRatio <= 0) return;
-        loadItems(3);
-        console.log('Loaded new items');
-    })
+    function infinityScroll(footerNode, callback) {
+        var observer = new IntersectionObserver(function(changes) {
+            if (changes[0].intersectionRatio <= 0) return;
+            callback();
+        });
+        observer.observe(document.querySelector(footerNode));
+    }
 
-    observer.observe(
-        document.querySelector('.scrollerFooter1')
-    );
+    /*
+    * @param: className
+    * @param: callback
+    * */
 
-    function loadItems(number) {
-        for (var i = 0; i< number; i++) {
+    infinityScroll('.scrollerFooter1', function() {
+        for (var i = 0; i< 3; i++) {
             document.getElementById('container').appendChild(document.getElementById('container').firstChild)
         }
-    }
+    });
 </script>
 </body>
 </html>
